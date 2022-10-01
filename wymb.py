@@ -19,14 +19,10 @@ mme=re.findall('<li><a href="/song\?id=(\d+)">(.*?)</a>',res.text)
 for nm,tit in mme:    
 
     mp=f'http://music.163.com/song/media/outer/url?id={nm}.mp3'
-
     
-
-
     music=requests.get(url=mp,headers=head)
 
     print(nm,tit)  
-
       
     with open(file+tit+".mp3","wb") as f:
 
